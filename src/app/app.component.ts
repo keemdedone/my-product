@@ -42,11 +42,12 @@ export class AppComponent implements OnInit {
   onFiltterData(fillter_product: any) {
     fillter_product.forEach((item: target[]) => {
       if (item.length !== 0) {
-        item.forEach((data, i: number) => {
+        item.forEach((data: any, i: number) => {
+          // console.log(data);
           const insert_data = {
             id: item[i].id,
             name: item[i].name,
-            weight: item[i].weight,
+            weight: item[i].weight * data.amount,
           };
           this.infoFillter.push(insert_data);
         });
