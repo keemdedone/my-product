@@ -1,3 +1,10 @@
 <div class="main">
   {{ final | json }}
+
+  <div class="items">
+    <div class="item" *ngFor="let rs of final">
+      <p>Name : {{ rs.name }}</p>
+      <p>Weight : {{ rs.weight }}</p>
+    </div>
+  </div>
 </div>
